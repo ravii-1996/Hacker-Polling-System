@@ -1,0 +1,24 @@
+<!--
+  * Home Button (which show candidate list) is diabled or reroute login page until user logged in.
+  * Login & Logut button toggled.
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/welcome" (click)="promptFun()">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item" style="float:right">
+        <a routerLink="/"  *ngIf="!lookupService.loggedIn()" routerLinkActive="active" class="nav-link" href="#">Login</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/admin" routerLinkActive="active" class="nav-link" *ngIf="lookupService.loggedIn()" (click)="lookupService.logoutUser()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

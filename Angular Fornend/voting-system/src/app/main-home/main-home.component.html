@@ -1,0 +1,163 @@
+<!--
+  * Main Home page where candiadte list is visible only after login by verified user.
+  * Use localstorage parameter to show and hide the actions on the basis role.
+  * We use here modal to show the add and update the candiadte details
+-->
+
+<div class="limiter">
+  <div class="container-table100">
+    <div class="wrap-table100">
+      <div class="table100">
+        <table>
+          <thead>
+            <tr class="table100-head">
+              <th class="column1">Hacker Name</th>
+              <th class="column2">Total Challange Solved</th>
+              <th class="column3">Total Rating</th>
+              <th class="column4" style="width:100px">Action</th>
+              <th *ngIf="isUserAdmin()" class="column4" style="width:100px"><button type="button" data-toggle="modal" data-target="#addcandidateCenter" (click)="toggleModalText('Add', 'Close')" class="btn btn-success">Add Candidate</button></th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let candidate of candidateList">
+                <td class="column1" ><a data-toggle="modal" (click)="candidateProfile(candidate)" data-target="#exampleModalCenter">{{candidate.hacker_name}}</a></td>
+                <td class="column2">{{candidate.total_challange_solved}}</td>
+                <td class="column3">{{candidate.candidate_rating}}</td>
+                <td class="column4"> <button type=button (click)="incrementVote(candidate)"
+                  [ngClass]="toggle ? 'btn btn-dark' : 'btn btn-dark disabled'">vote</button>
+                </td>
+                <td *ngIf="isUserAdmin()" class="column4">
+                <span><i class="fa fa-edit" data-toggle="modal" data-target="#addcandidateCenter" (click)="candidateProfile(candidate)"style="font-size: 25px; margin:10px"></i></span>
+                <span><i class="material-icons" (click)="deleteCandidate(candidate)" style=" margin:10px">delete</i></span>
+                </td>
+
+              </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal For Candidate Details View -->
+
+<div style="margin-left: 30%;" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div  class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div style="text-align: center;"class="modal-body">
+        <a><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" class="rounded-circle"></a>
+        <h3 class="media-heading">{{candidate.hacker_name}}</h3>
+        <Strong><p style="color:  #800000;">Total Challange Solved : {{candidate.total_challange_solved}}</p></Strong>
+        <p style="color:  #800000;">Candidate Rating: {{candidate.candidate_rating}}
+        </p>
+        <p style="color:  #800000;">Total Vote: {{candidate.vote}}</p>
+        <hr>
+
+
+        <table >
+          <thead >
+          <tr >
+            <th style="color: whitesmoke;">Skill</th>
+            <th style="color: whitesmoke;" >Rating</th>
+            <th style="color: whitesmoke;" >Skill</th>
+            <th style="color: whitesmoke;" >Rating</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th>Data Structure</th>
+            <td>{{candidate.expert_in.data_structure}}</td>
+            <th>Algorithms</th>
+            <td>{{candidate.expert_in.algorithms}}</td>
+          </tr>
+          <tr>
+            <th>Node</th>
+            <td>{{candidate.expert_in.node}}</td>
+            <th>Angular</th>
+            <td>{{candidate.expert_in.angular}}</td>
+          </tr>
+          <tr>
+            <th>Python</th>
+            <td>{{candidate.expert_in.python}}</td>
+            <th>Java</th>
+            <td>{{candidate.expert_in.java}}</td>
+          </tr>
+        </tbody>
+        </table>
+
+    </div>
+      <div class="modal-footer">
+        <button type="button" [ngClass]="!toggle ? 'btn btn-dark' : 'btn btn-dark disabled'" data-dismiss="modal">Close</button>
+        <button type="button" (click)="incrementVote(candidate)"
+        [ngClass]="toggle ? 'btn btn-dark' : 'btn btn-dark disabled'">Vote</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal for Add & Edit Candidate-->
+
+<!--
+  * Here we use one modal for both edit and updtae the candidates. With the help of ngmodule and two way  binding.
+-->
+
+<div style="margin-left: 30%;" class="modal fade" id="addcandidateCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div  class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div style="text-align: center;"class="modal-body">
+        <div class="signup-form">
+          <form >
+          <h2>{{editModaltxt.header}} Candidate</h2>
+              <div class="form-group">
+                <div class="form-group">
+                  Name Of Candidate
+                <input type="text" [(ngModel)]="newCandidate.hacker_name" class="form-control" name="name"  required="required">
+                <small *ngIf="validateName" class="danger">Name is required</small>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    Candidate Rating <input [(ngModel)]="newCandidate.candidate_rating"  type="number" class="form-control" min="0" max="10" name="candidate_rating"  required="required"></div>
+                  <div class="col">
+                    Challange Solved
+                    <input type="number" [(ngModel)]="newCandidate.total_challange_solved"  name="total_challange_solved" class="form-control" min="0" max="10000"  required="required">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    Node<input type="number" [(ngModel)]="newCandidate.expert_in.node"  class="form-control" min="0" max="10"  name="node"></div>
+                  <div class="col">
+                    Angular
+                    <input type="number" [(ngModel)]="newCandidate.expert_in.angular"  class="form-control" min="0" max="10"  name="angular">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    Algorithm Rating<input type="number" min="0" max="10"  [(ngModel)]="newCandidate.expert_in.algorithms"  class="form-control" name="algorithms"></div>
+                  <div class="col">
+                    Data Structure Rating
+                    <input type="number" min="0" max="10"  name="data_structure" [(ngModel)]="newCandidate.expert_in.data_structure"  class="form-control" >
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col">
+                    Java Rating<input type="number" min="0" max="10"  [(ngModel)]="newCandidate.expert_in.java"  class="form-control" name="java"></div>
+                  <div class="col">
+                    Python Rating
+                    <input type="number" min="0" max="10"  [(ngModel)]="newCandidate.expert_in.python"  class="form-control" name="python">
+                  </div>
+                </div>
+              </div>
+          </form>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{editModaltxt.footer}}</button>
+          <button type="button" class="btn btn-primary" (click)="addUpdateCandidate(newCandidate, editModaltxt.header)" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

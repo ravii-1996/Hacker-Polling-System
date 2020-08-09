@@ -1,0 +1,35 @@
+<!--
+  * Login Page
+
+  * We can use client site validation with template driven approach or reactive form approach to make this much more feasiable.
+
+-->
+
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+  <div class="container">
+    <div class="card login-card">
+      <div class="row no-gutters">
+        <div class="col-md-5">
+          <img src="../../assets/images/login1.jpg" alt="login" class="login-card-img">
+        </div>
+        <div class="col-md-7" class="form-group">
+          <div class="card-body">
+            <p class="login-card-description">Sign into your account</p>
+            <form >
+                <div class="form-group">
+                  <label for="email" class="sr-only">Email</label>
+                  <input type="email" [(ngModel)]="loginUserData.email" name="email" id="email" class="form-control" placeholder="Email address">
+                </div>
+                <div class="form-group mb-4">
+                  <label for="password" class="sr-only">Password</label>
+                  <input type="password" [(ngModel)]="loginUserData.password" name="password" id="password" class="form-control" placeholder="***********">
+                </div>
+                <button name="login" id="login" class="btn btn-block login-btn mb-4" type="button" (click)="loginUser()">Login</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>

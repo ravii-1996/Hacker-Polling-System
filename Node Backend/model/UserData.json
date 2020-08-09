@@ -1,0 +1,68 @@
+[
+  {
+    "email" : "admin",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "admin"
+  },
+  {
+    "email" : "Ravi@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "admin"
+  },
+  {
+    "email" : "Shally@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  },
+  {
+    "email" : "Meena@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  },
+  {
+    "email" : "Reena@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  },
+  {
+    "email" : "Monika@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  },
+  {
+    "email" : "Dj@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  },
+  {
+    "email" : "Sanjay@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  },
+  {
+    "email" : "Rohit@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  },
+  {
+    "email" : "Mohit@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  },
+  {
+    "email" : "Rakesh@coda.com",
+    "password" : "Qwerty",
+    "eligible_for_vote" : true,
+    "role" : "user"
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "hacker_name": "Rohit Kumar",
+    "total_challange_solved" : 158,
+    "candidate_rating" : 8,
+    "vote": 50,
+    "expert_in" : {
+      "data_structure" : 4,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+  {
+    "hacker_name": "Ravi Kumar",
+    "total_challange_solved" : 528,
+    "candidate_rating" : 9,
+    "vote": 60,
+    "expert_in" : {
+      "data_structure" : 9,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+  {
+    "hacker_name": "Rakesh Roy",
+    "total_challange_solved" : 418,
+    "candidate_rating" : 9,
+    "vote": 80,
+    "expert_in" : {
+      "data_structure" : 4,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+  {
+    "hacker_name": "Abhishek singh",
+    "total_challange_solved" : 128,
+    "candidate_rating" : 7,
+    "vote": 10,
+    "expert_in" : {
+      "data_structure" : 7,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+  {
+    "hacker_name": "Monika Gupta",
+    "total_challange_solved" : 580,
+    "candidate_rating" : 9,
+    "vote": 40,
+    "expert_in" : {
+      "data_structure" : 9,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+  
+  {
+    "hacker_name": "Vijay Singh",
+    "total_challange_solved" : 258,
+    "candidate_rating" : 8,
+    "vote": 108,
+    "expert_in" : {
+      "data_structure" : 40,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+  
+  {
+    "hacker_name": "Sashi Kapoor",
+    "total_challange_solved" : 78,
+    "candidate_rating" : 8,
+    "vote": 10,
+    "expert_in" : {
+      "data_structure" : 7,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+  
+  {
+    "hacker_name": "Deepak Vats",
+    "total_challange_solved" : 118,
+    "candidate_rating" : 5,
+    "vote": 90,
+    "expert_in" : {
+      "data_structure" : 4,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+
+  {
+    "hacker_name": "Saket Pal",
+    "total_challange_solved" : 110,
+    "candidate_rating" : 6,
+    "vote": 40,
+    "expert_in" : {
+      "data_structure" : 4,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  },
+
+  {
+    "hacker_name": "Ronit Vats",
+    "total_challange_solved" : 117,
+    "candidate_rating" : 7,
+    "vote": 92,
+    "expert_in" : {
+      "data_structure" : 4,
+      "algorithms" : 5,
+      "java" : 4,
+      "python" : 4,
+      "node" :3,
+      "angular" : 5
+    }
+  }
+]
